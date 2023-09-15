@@ -34,3 +34,5 @@ The following image demonstrates the homepage's appearance and functionality:
 
 ---
 
+
+Animus Imperat! Is this something you can see?!?
