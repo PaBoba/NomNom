@@ -32,6 +32,7 @@ The search results page (`search-results.html`) should have and do the following
 The following image demonstrates the homepage's appearance and functionality:
 
 test - joseph
+test - ricky
 ---
 
 
