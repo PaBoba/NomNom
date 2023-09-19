@@ -26,6 +26,21 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
 
+    <script>
+       function initMap() {
+
+            let mapOptions = {
+                center: new google.maps.LatLng("32.707548", "-117.157246"),
+                zoom: 16
+
+            }
+            
+            let map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+
+        }
+ </script>
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvQAAJpMY6VwCW10abbx5h8v-QmHgyL-s&callback=initMap"></script>
 
     
