@@ -80,7 +80,9 @@ p {
 }
 
 #floating-panel {
-    
+    position: absolute;
+    top: 10px;
+    left: 25%; 
 
 
 
