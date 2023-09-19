@@ -23,7 +23,12 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
         origin: document.getElementById("from").value,
         destination: document.getElementById("to").value,
 
+        travelMode: google.maps.TravelMode[selectedMode],
 
+    })
+    .then((response) => {
+        directionsRenderer.setDirections(response);
+    })
 
 }
 
