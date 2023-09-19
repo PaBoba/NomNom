@@ -42,6 +42,13 @@ p {
     background-color: var(--primary);
 }
 
+.apiList {
+    justify-content: flex-start;
+    font-size: 3rem;
+    color: var(--dark);
+    background-color: var(--primary);
+}
+
 .button.button-primary {
     font-family: 'Ubuntu', sans-serif;
     color: var(--dark);
@@ -52,7 +59,7 @@ p {
 .button.button-primary:hover {
     background-color: var(--light-dark);
     border-color: var(--dark);
-    color: var(--secondary);
+    color: var(--secondary) ;
 }
 
 .app-title {
