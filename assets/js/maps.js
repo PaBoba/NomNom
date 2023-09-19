@@ -18,7 +18,10 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 
     const selectedMode = document.getElementById("mode").value;
 
-    
+    directionsService
+    .route({
+        origin: document.getElementById("from").value,
+        destination: document.getElementById("to").value,
 
 
 
