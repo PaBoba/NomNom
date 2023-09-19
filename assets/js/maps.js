@@ -16,9 +16,12 @@ function initMap() {
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 
-
+    const selectedMode = document.getElementById("mode").value;
 
     
+
+
+
 }
 
 
