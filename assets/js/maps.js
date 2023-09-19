@@ -14,7 +14,12 @@ function initMap() {
 
 }
 
+function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 
+
+
+    
+}
 
 
 
