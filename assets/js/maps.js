@@ -1,12 +1,54 @@
 function initMap() {
-
-    let mapOptions = {
+    const directionsRenderer = new google.maps.DirectionsRenderer();
+    const directionsService = new google.maps.DirectionsService();
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 16,
         center: new google.maps.LatLng("32.707548", "-117.157246"),
-        zoom: 16
+    });
 
-    }
-    
-    let map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
+    directionsRenderer.setMap(map);
+    calculateAndDisplayRoute(directionsService, directionsRenderer);
+    document.getElementById("mode").addEventListener("change", () => {
+        calculateAndDisplayRoute(directionsService, directionsRenderer);
+    });
 
 }
+
+function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+
+    const selectedMode = document.getElementById("mode").value;
+
+    directionsService
+    .route({
+        origin: document.getElementById("from").value,
+        destination: document.getElementById("to").value,
+
+        travelMode: google.maps.TravelMode[selectedMode],
+
+    })
+    .then((response) => {
+        directionsRenderer.setDirections(response);
+    })
+
+}
+
+
+
+
+
+
+
+
+
+// function initMap() {
+
+//     let mapOptions = {
+//         center: new google.maps.LatLng("32.707548", "-117.157246"),
+//         zoom: 16
+
+//     }
+    
+//     let map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+
+// }
