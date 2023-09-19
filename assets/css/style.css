@@ -72,16 +72,3 @@ p {
     border-radius: var(--border-radius);
     box-shadow: 6px 5px var(--light-dark);
 }
-
-#container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#map {
-    height: 80vh;
-    width : 80vh;
-
-}
