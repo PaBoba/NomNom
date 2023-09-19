@@ -6,9 +6,15 @@ function initMap() {
         center: new google.maps.LatLng("32.707548", "-117.157246"),
     });
 
+    directionsRenderer.setMap(map);
+    calculateAndDisplayRoute(directionsService, directionsRenderer);
+    document.getElementById("mode").addEventListener("change", () => {
+        calculateAndDisplayRoute(directionsService, directionsRenderer);
+    });
+
 }
 
-directionsRenderer.setMap(map);
+
 
 
 
