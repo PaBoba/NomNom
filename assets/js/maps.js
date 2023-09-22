@@ -41,6 +41,12 @@ function calcRoute() {
     });
 }
 
+let googleSearch = document.getElementById("googleSearch")
+
+googleSearch.addEventListener("click", function (event) {
+    event.preventDefault();
+    calcRoute();
+});
 
 
 
