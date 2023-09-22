@@ -25,6 +25,7 @@
 
 #source,
 #dest {
+    margin-top: 10px;
     color: black;
     width: 36%;
 }
