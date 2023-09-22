@@ -16,15 +16,13 @@
 
 }
 
-/* #floating-panel {
-    border: 2px solid var(--primary);
-    border-radius: var(border-radius);
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    line-height: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
-} */
+div.form-group {
+    color: var(--dark);
+}
+
+input[type=text],input[type=text]::placeholder{
+    color:var(--dark);
+   }
 
 #source,
 #dest {
@@ -36,8 +34,6 @@
     border-color: var(--dark);
     /* margin-top: 10px; */
     width: 36%;
-    /* Not sure why the text inside is not black, while the button below is, any thoughts? */
-    /* When this scrolls up, the fields merge with nav bar, seems muddled */
 }
 
 #googleSearch {
