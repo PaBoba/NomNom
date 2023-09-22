@@ -14,13 +14,65 @@
     <link rel="stylesheet" href="./assets/css/skeleton.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/maps.css">
+    <link rel="stylesheet" href="./assets/css/nav.css">
     <link rel="icon" type="image/png" href="./assets/images/NomNom favicon.png">
     <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <title>NomNom Nav</title>
 </head>
+<body class="body">
+    <section class="header">
+        <div class="navbar-spacer">
+            <nav class="navbar">
+                <div class="container">
+                    <ul class="navbar-list">
+                        <li class="navbar-item">
+                            <a class="navbar-link" href="#home">Home</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a class="navbar-link" href="#about">About</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a class="navbar-link" href="#maps">Maps</a>
+                        </li>
+                        <li style="float: right" class="navbar-item">
+                            <a class="navbar-link" href="#nom">Nom</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <header class="hero row">
+            <h1 class=" six columns app-title">NomNom!</h1>
+            <p class="six columns button button-primary">NOM!</p>
+        <div class = 'apiData'>
+        </div>
+        <div id="container">
+            <div id="map"></div>
+        </div>
+        <div id="floating-panel" class = 'container'>
+            <div class="row">
+                <div class="four columns">
+                    <input type="text" id="from" placeholder="Origin">
+                </div>
+            </div>
+            <div class="row">
+                <div class="four columns">
+                    <input type="text" id="to" placeholder="Destination">
+                </div>
+            </div>
 
-<body>
-    <header class="hero">
+            <div class="row">
+                <!-- <b class="three columns">Mode of Travel</b> -->
+                <select id="mode" class="four columns">
+
+                    <option value="DRIVING">Driving</option>
+                    <option value="WALKING">Walking</option>
+                    <option value="BICYCLING">Bicycling</option>
+                    <option value="TRANSIT">Public Transit</option>
+                </select>
+            </div>
+
         <div class="container">
             <div class="form-group">
                 <input id="source" class="form-control" type="text" placeholder="Source Address">
@@ -36,8 +88,8 @@
             <button onclick="calcRoute()" class="button-primary">Get Directions</button>
             <br>
             <div id="map"></div>
-
         </div>
+        
     </header>
 
     <section class="hero">

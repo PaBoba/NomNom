@@ -1,22 +1,20 @@
 #container {
-    height: 100vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #map {
-    height: 80vh;
-    width: 80vh;
+    height: 50vh;
+    width: 50vh;
 
 }
 
 #floating-panel {
-    position: absolute;
-    top: 10px;
-    left: 25%;
     z-index: 5;
-    border: 1px solid #999;
+    border: 2px solid var(--primary);
+    border-radius: var(border-radius);
     text-align: center;
     font-family: 'Helvetica Neue', 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 30px;

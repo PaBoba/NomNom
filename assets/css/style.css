@@ -21,13 +21,22 @@ main {
     width: 94%;
 }
 
+div {
+    display: block;
+}
+
 p {
     display: flex;
     font-size: 1.2rem;
 }
 
+a {
+    color: var(--dark);
+}
+
 .hero {
     display: flex;
+    margin-top: 50px;
     flex-direction: column;
     justify-content: center;
     padding: 5% 7%;
@@ -42,16 +51,18 @@ p {
     background-color: var(--primary);
 }
 
-.apiList {
+.apiData {
     justify-content: flex-start;
     font-size: 3rem;
-    color: var(--dark);
-    background-color: var(--primary);
+    color: var(--primary);
+    background-color: var(--dark);
 }
 
 .button.button-primary {
     font-family: 'Ubuntu', sans-serif;
     color: var(--dark);
+    width: max-content;
+    justify-content: center;
     background-color: var(--primary);
     border-color: var(--dark);
 }
@@ -64,6 +75,7 @@ p {
 
 .app-title {
     display: flex;
+    width: max-content;
     justify-content: center;
     font-size: 300%;
     background-color: var(--primary);
@@ -72,3 +84,11 @@ p {
     border-radius: var(--border-radius);
     box-shadow: 6px 5px var(--light-dark);
 }
+
+.container {
+    position: relative;
+    margin: 0 0;
+    padding: 0 0;
+    box-sizing: border-box;
+}
+
