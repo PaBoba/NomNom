@@ -1,8 +1,12 @@
+.custom-map-control-button {
+    color: VAR(--dark);
+}
+
 #container {
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    margin: 0 0;
+    padding: 0 0;
+    box-sizing: border-box;
 }
 
 #map {
@@ -12,41 +16,41 @@
 
 }
 
-#floating-panel {
-    z-index: 5;
+/* #floating-panel {
     border: 2px solid var(--primary);
     border-radius: var(border-radius);
     text-align: center;
-    font-family: 'Helvetica Neue', 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     line-height: 30px;
     padding-left: 10px;
     padding-right: 10px;
-}
+} */
 
 #source,
 #dest {
-    margin-top: 10px;
-    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--dark);
+    width: max-content;
+    justify-content: center;
+    background-color: var(--primary);
+    border-color: var(--dark);
+    /* margin-top: 10px; */
     width: 36%;
+    /* Not sure why the text inside is not black, while the button below is, any thoughts? */
+    /* When this scrolls up, the fields merge with nav bar, seems muddled */
 }
 
 #googleSearch {
-    color: white;
-    top:50%;
-    background-color:blue;
-    display: inline-block;
-    height: 38px;
-    padding: 0 30px;
-    text-align: center;
-    font-size: 11px;
-    font-weight: 600;
-    line-height: 38px;
-    letter-spacing: .1rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    white-space: nowrap;
-    border-radius: 4px;
-    border: 1px solid blue;
-    cursor: pointer;
-    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--dark);
+    width: max-content;
+    justify-content: center;
+    background-color: var(--primary);
+    border-color: var(--dark);
+}
+
+#googleSearch:hover {
+    background-color: var(--light-dark);
+    border-color: var(--dark);
+    color: var(--secondary);
 }
