@@ -33,6 +33,7 @@
     /* margin-top: 10px; */
     width: 36%;
     /* Not sure why the text inside is not black, while the button below is, any thoughts? */
+    /* When this scrolls up, the fields merge with nav bar, seems muddled */
 }
 
 #googleSearch {
