@@ -38,20 +38,21 @@ nav li a:hover {
     color: var(--secondary);
     background-color: var(--light-dark);
 }
-.navbar-spacer {
+/* .navbar-spacer {
     
-}
+} */
 
-.navbar {
+/* .navbar {
     
-}
+} */
 
 .navbar-list {
     font-size: 1.7rem;
+    box-shadow: 0px 12px 10px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-item {
-}
+/* .navbar-item { */
+/* } */
 
 .navbar-link {
     text-transform: uppercase;
