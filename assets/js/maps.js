@@ -1,37 +1,45 @@
+let map;
+let directionsService;
+let directionsRenderer;
+let sourceAutocomplete;
+let desAutocomplete;
+
 function initMap() {
-    const directionsRenderer = new google.maps.DirectionsRenderer();
-    const directionsService = new google.maps.DirectionsService();
-    const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 16,
-        center: new google.maps.LatLng("32.707548", "-117.157246"),
-    });
-
+    map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 32.707548, lng: -117.157246 },
+        zoom: 13,
+    })
+    google.maps.event.addListener(map, "click", function (event) {
+        this.setOptions({ scrollwheel: true });
+    })
+    directionsService = new google.maps.DirectionsService();
+    directionsRenderer = new google.maps.DirectionsRenderer();
     directionsRenderer.setMap(map);
-    calculateAndDisplayRoute(directionsService, directionsRenderer);
-    document.getElementById("mode").addEventListener("change", () => {
-        calculateAndDisplayRoute(directionsService, directionsRenderer);
+
+    sourceAutocomplete = new google.maps.places.Autocomplete(
+        document.getElementById("source")
+    )
+    desAutocomplete = new google.maps.places.Autocomplete(
+        document.getElementById("dest")
+    )
+}
+
+function calcRoute() {
+    const source = document.getElementById("source").value
+    const dest = document.getElementById("dest").value
+
+    let request = {
+        origin: source,
+        destination: dest,
+        travelMode: "DRIVING",
+
+    };
+    directionsService.route(request, function (result, status) {
+        if (status == "OK") {
+            directionsRenderer.setDirections(result);
+        }
     });
-
 }
-
-function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-
-    const selectedMode = document.getElementById("mode").value;
-
-    directionsService
-    .route({
-        origin: document.getElementById("from").value,
-        destination: document.getElementById("to").value,
-
-        travelMode: google.maps.TravelMode[selectedMode],
-
-    })
-    .then((response) => {
-        directionsRenderer.setDirections(response);
-    })
-
-}
-
 
 
 

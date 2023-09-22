@@ -16,5 +16,14 @@
     border: 2px solid var(--primary);
     border-radius: var(border-radius);
     text-align: center;
-    padding: 20px;
+    font-family: 'Helvetica Neue', 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#source,
+#dest {
+
+    width: 36%;
 }
