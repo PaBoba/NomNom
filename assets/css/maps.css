@@ -1,3 +1,7 @@
+.custom-map-control-button {
+    color: VAR(--dark);
+}
+
 #container {
     position: relative;
     margin: 0 0;
