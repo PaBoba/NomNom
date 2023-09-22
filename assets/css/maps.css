@@ -30,7 +30,7 @@
     justify-content: center;
     background-color: var(--primary);
     border-color: var(--dark);
-    margin-top: 10px;
+    /* margin-top: 10px; */
     width: 36%;
     /* Not sure why the text inside is not black, while the button below is, any thoughts? */
 }
