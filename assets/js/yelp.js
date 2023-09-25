@@ -22,6 +22,7 @@ const locationSearchInput = document.getElementById('location');
 
 
 
+
 jQuery.ajaxPrefilter(function(options) {
   if (options.crossDomain && jQuery.support.cors) {
       options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
@@ -67,20 +68,6 @@ businessSearchInput.addEventListener('keydown', function(event) {
         console.log(data.businesses[0].image_url);
         console.log(data.businesses[2].location.display_address[0]);
         console.log(data.businesses[2].location.display_address[1]);
-
-        console.log(data.businesses[3].name);
-        console.log(data.businesses[3].price);
-        console.log(data.businesses[3].rating);
-        console.log(data.businesses[0].image_url);
-        console.log(data.businesses[3].location.display_address[0]);
-        console.log(data.businesses[3].location.display_address[1]);
-
-        console.log(data.businesses[4].name);
-        console.log(data.businesses[4].price);
-        console.log(data.businesses[4].rating);
-        console.log(data.businesses[0].image_url);
-        console.log(data.businesses[4].location.display_address[0]);
-        console.log(data.businesses[4].location.display_address[1]);
     });
 
     console.log(searchTerm);
@@ -115,6 +102,8 @@ locationSearchInput.addEventListener('keydown', function(event) {
         console.log(data.businesses[0].location.display_address[0]);
         console.log(data.businesses[0].location.display_address[1]);
         
+        const restaurant1Name = data.businesses[0].name
+        $('#restaurant1Name').text(restaurant1Name)
 
         console.log(data.businesses[1].name);
         console.log(data.businesses[1].price);
@@ -130,19 +119,6 @@ locationSearchInput.addEventListener('keydown', function(event) {
         console.log(data.businesses[2].location.display_address[0]);
         console.log(data.businesses[2].location.display_address[1]);
 
-        console.log(data.businesses[3].name);
-        console.log(data.businesses[3].price);
-        console.log(data.businesses[3].rating);
-        console.log(data.businesses[0].image_url);
-        console.log(data.businesses[3].location.display_address[0]);
-        console.log(data.businesses[3].location.display_address[1]);
-
-        console.log(data.businesses[4].name);
-        console.log(data.businesses[4].price);
-        console.log(data.businesses[4].rating);
-        console.log(data.businesses[0].image_url);
-        console.log(data.businesses[4].location.display_address[0]);
-        console.log(data.businesses[4].location.display_address[1]);
     });
 
     console.log(searchTerm);
