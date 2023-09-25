@@ -1,4 +1,4 @@
-# Project 01 - NomNom Nav Resturant Picker
+# Project 01 - NomNom Nav Restaurant Picker
 
 ## User Story
 
