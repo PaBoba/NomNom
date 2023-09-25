@@ -63,7 +63,7 @@ locationSearchInput.addEventListener('keydown', function(event) {
     const searchTerm = locationSearchInput.value;
 
     $.ajax({
-      url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${restaurants}&location=${location}`,
+      url: `https://api.yelp.com/v3/businesses/search?term=${restaurants}&location=${location}`,
       method: "GET",
       headers: { "accept": "application/json", "Authorization": `Bearer ${apiKey}`},
 
