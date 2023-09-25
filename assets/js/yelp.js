@@ -15,24 +15,25 @@ const $hours = $('#hours');
 const $parking = $('#parking');
 const $foodType = $('#foodType');
 const $restaurants = $('#restaurants');
+const $location = $('#location');
 
-const searchInput = document.getElementById('restaurants');
+const businessSearchInput = document.getElementById('restaurants');
+const locationSearchInput = document.getElementById('location');
 
-searchInput.addEventListener('keydown', function(event) {
+businessSearchInput.addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
     const priceRange = $priceRange.val();
     const hours = $hours.val();
     const parking = $parking.val();
     const foodType = $foodType.val();
     const restaurants = $restaurants.val();
-
-    const searchTerm = searchInput.value;
+    const location = $location.val();
+    const searchTerm = businessSearchInput.value;
 
     $.ajax({
-      url: queryURL,
+      url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${restaurants}&location=${location}`,
       method: "GET",
       headers: { "accept": "application/json", "Authorization": `Bearer ${apiKey}`},
-      data: { term: '${restaurants}' , location: 'Oakland'}
 
     }).then(function(data) {
         console.log(data);
@@ -43,6 +44,32 @@ searchInput.addEventListener('keydown', function(event) {
       event.preventDefault();
   }
 });
+
+locationSearchInput.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    const priceRange = $priceRange.val();
+    const hours = $hours.val();
+    const parking = $parking.val();
+    const foodType = $foodType.val();
+    const restaurants = $restaurants.val();
+    const location = $location.val();
+    const searchTerm = locationSearchInput.value;
+
+    $.ajax({
+      url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${restaurants}&location=${location}`,
+      method: "GET",
+      headers: { "accept": "application/json", "Authorization": `Bearer ${apiKey}`},
+
+    }).then(function(data) {
+        console.log(data);
+    });
+
+    console.log(searchTerm);
+
+      event.preventDefault();
+  }
+});
+
 
 
 
