@@ -21,11 +21,14 @@ const businessSearchInput = document.getElementById('restaurants');
 const locationSearchInput = document.getElementById('location');
 
 
+
 jQuery.ajaxPrefilter(function(options) {
   if (options.crossDomain && jQuery.support.cors) {
       options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
   }
 });
+
+
 
 businessSearchInput.addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
@@ -44,12 +47,48 @@ businessSearchInput.addEventListener('keydown', function(event) {
 
     }).then(function(data) {
         console.log(data);
+        console.log(data.businesses[0].name);
+        console.log(data.businesses[0].price);
+        console.log(data.businesses[0].rating);
+        console.log(data.businesses[0].image_url);
+        console.log(data.businesses[0].location.display_address[0]);
+        console.log(data.businesses[0].location.display_address[1]);
+
+        console.log(data.businesses[1].name);
+        console.log(data.businesses[1].price);
+        console.log(data.businesses[1].rating);
+        console.log(data.businesses[0].image_url);
+        console.log(data.businesses[1].location.display_address[0]);
+        console.log(data.businesses[1].location.display_address[1]);
+
+        console.log(data.businesses[2].name);
+        console.log(data.businesses[2].price);
+        console.log(data.businesses[2].rating);
+        console.log(data.businesses[0].image_url);
+        console.log(data.businesses[2].location.display_address[0]);
+        console.log(data.businesses[2].location.display_address[1]);
+
+        console.log(data.businesses[3].name);
+        console.log(data.businesses[3].price);
+        console.log(data.businesses[3].rating);
+        console.log(data.businesses[0].image_url);
+        console.log(data.businesses[3].location.display_address[0]);
+        console.log(data.businesses[3].location.display_address[1]);
+
+        console.log(data.businesses[4].name);
+        console.log(data.businesses[4].price);
+        console.log(data.businesses[4].rating);
+        console.log(data.businesses[0].image_url);
+        console.log(data.businesses[4].location.display_address[0]);
+        console.log(data.businesses[4].location.display_address[1]);
     });
 
     console.log(searchTerm);
       event.preventDefault();
   }
 });
+
+
 
 
 locationSearchInput.addEventListener('keydown', function(event) {
@@ -69,6 +108,41 @@ locationSearchInput.addEventListener('keydown', function(event) {
 
     }).then(function(data) {
         console.log(data);
+        console.log(data.businesses[0].name);
+        console.log(data.businesses[0].price);
+        console.log(data.businesses[0].rating);
+        console.log(data.businesses[0].image_url);
+        console.log(data.businesses[0].location.display_address[0]);
+        console.log(data.businesses[0].location.display_address[1]);
+        
+
+        console.log(data.businesses[1].name);
+        console.log(data.businesses[1].price);
+        console.log(data.businesses[1].rating);
+        console.log(data.businesses[0].image_url);
+        console.log(data.businesses[1].location.display_address[0]);
+        console.log(data.businesses[1].location.display_address[1]);
+
+        console.log(data.businesses[2].name);
+        console.log(data.businesses[2].price);
+        console.log(data.businesses[2].rating);
+        console.log(data.businesses[0].image_url);
+        console.log(data.businesses[2].location.display_address[0]);
+        console.log(data.businesses[2].location.display_address[1]);
+
+        console.log(data.businesses[3].name);
+        console.log(data.businesses[3].price);
+        console.log(data.businesses[3].rating);
+        console.log(data.businesses[0].image_url);
+        console.log(data.businesses[3].location.display_address[0]);
+        console.log(data.businesses[3].location.display_address[1]);
+
+        console.log(data.businesses[4].name);
+        console.log(data.businesses[4].price);
+        console.log(data.businesses[4].rating);
+        console.log(data.businesses[0].image_url);
+        console.log(data.businesses[4].location.display_address[0]);
+        console.log(data.businesses[4].location.display_address[1]);
     });
 
     console.log(searchTerm);
