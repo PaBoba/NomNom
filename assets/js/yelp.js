@@ -7,7 +7,7 @@
 
 
 // the yelp api doesnt support CORS, so a proxy is needed before the url
-let queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search";
+let queryURL = "https://api.yelp.com/v3/businesses/search";
 const apiKey = '16jnFQRP52jf5sybih5Xg2CGHQJWWi_dDbbM-J5988og5MVn4mc1XIpUF8bIp6Oc3ZT-_QN8G5guPGva36ViW8D5mldgP6LUPESb_fHvUDvNhf7qneIfHFngMCUBZXYx' //Add your key here
 
 const $priceRange = $('#priceRange');
@@ -20,6 +20,13 @@ const $location = $('#location');
 const businessSearchInput = document.getElementById('restaurants');
 const locationSearchInput = document.getElementById('location');
 
+
+jQuery.ajaxPrefilter(function(options) {
+  if (options.crossDomain && jQuery.support.cors) {
+      options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+  }
+});
+
 businessSearchInput.addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
     const priceRange = $priceRange.val();
@@ -31,7 +38,7 @@ businessSearchInput.addEventListener('keydown', function(event) {
     const searchTerm = businessSearchInput.value;
 
     $.ajax({
-      url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${restaurants}&location=${location}`,
+      url: `https://api.yelp.com/v3/businesses/search?term=${restaurants}&location=${location}`,
       method: "GET",
       headers: { "accept": "application/json", "Authorization": `Bearer ${apiKey}`},
 
@@ -40,10 +47,10 @@ businessSearchInput.addEventListener('keydown', function(event) {
     });
 
     console.log(searchTerm);
-
       event.preventDefault();
   }
 });
+
 
 locationSearchInput.addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
@@ -65,7 +72,6 @@ locationSearchInput.addEventListener('keydown', function(event) {
     });
 
     console.log(searchTerm);
-
       event.preventDefault();
   }
 });
