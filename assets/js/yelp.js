@@ -109,6 +109,9 @@ locationSearchInput.addEventListener('keydown', function(event) {
         const restaurant1Price = data.businesses[0].price
         $('#restaurant1Text').text(restaurant1Rating + ' , ' + restaurant1Price);
 
+        const restaurant1Image = data.businesses[0].image_url
+        $('#restaurant1Image').attr('src', data.businesses[0].image_url);
+
         console.log(data.businesses[1].name);
         console.log(data.businesses[1].price);
         console.log(data.businesses[1].rating);
@@ -123,6 +126,9 @@ locationSearchInput.addEventListener('keydown', function(event) {
         const restaurant2Price = data.businesses[1].price
         $('#restaurant2Text').text(restaurant2Rating + ' , ' + restaurant2Price);
 
+        const restaurant2Image = data.businesses[1].image_url
+        $('#restaurant2Image').attr('src', data.businesses[1].image_url);
+
         console.log(data.businesses[2].name);
         console.log(data.businesses[2].price);
         console.log(data.businesses[2].rating);
@@ -136,6 +142,9 @@ locationSearchInput.addEventListener('keydown', function(event) {
         const restaurant3Rating = data.businesses[2].rating
         const restaurant3Price = data.businesses[2].price
         $('#restaurant3Text').text(restaurant3Rating + ' , ' + restaurant3Price);
+
+        const restaurant3Image = data.businesses[2].image_url
+        $('#restaurant3Image').attr('src', data.businesses[2].image_url);
 
     });
 
