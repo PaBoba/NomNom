@@ -21,11 +21,15 @@ const businessSearchInput = document.getElementById('restaurants');
 const locationSearchInput = document.getElementById('location');
 
 
+
+
 jQuery.ajaxPrefilter(function(options) {
   if (options.crossDomain && jQuery.support.cors) {
       options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
   }
 });
+
+
 
 businessSearchInput.addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
@@ -44,12 +48,34 @@ businessSearchInput.addEventListener('keydown', function(event) {
 
     }).then(function(data) {
         console.log(data);
+        console.log(data.businesses[0].name);
+        console.log(data.businesses[0].price);
+        console.log(data.businesses[0].rating);
+        console.log(data.businesses[0].image_url);
+        console.log(data.businesses[0].location.display_address[0]);
+        console.log(data.businesses[0].location.display_address[1]);
+
+        console.log(data.businesses[1].name);
+        console.log(data.businesses[1].price);
+        console.log(data.businesses[1].rating);
+        console.log(data.businesses[0].image_url);
+        console.log(data.businesses[1].location.display_address[0]);
+        console.log(data.businesses[1].location.display_address[1]);
+
+        console.log(data.businesses[2].name);
+        console.log(data.businesses[2].price);
+        console.log(data.businesses[2].rating);
+        console.log(data.businesses[0].image_url);
+        console.log(data.businesses[2].location.display_address[0]);
+        console.log(data.businesses[2].location.display_address[1]);
     });
 
     console.log(searchTerm);
       event.preventDefault();
   }
 });
+
+
 
 
 locationSearchInput.addEventListener('keydown', function(event) {
@@ -69,6 +95,57 @@ locationSearchInput.addEventListener('keydown', function(event) {
 
     }).then(function(data) {
         console.log(data);
+        console.log(data.businesses[0].name);
+        console.log(data.businesses[0].price);
+        console.log(data.businesses[0].rating);
+        console.log(data.businesses[0].image_url);
+        console.log(data.businesses[0].location.display_address[0]);
+        console.log(data.businesses[0].location.display_address[1]);
+        
+        const restaurant1Name = data.businesses[0].name
+        $('#restaurant1Name').text(restaurant1Name);
+
+        const restaurant1Rating = data.businesses[0].rating
+        const restaurant1Price = data.businesses[0].price
+        $('#restaurant1Text').text(restaurant1Rating + ' , ' + restaurant1Price);
+
+        const restaurant1Image = data.businesses[0].image_url
+        $('#restaurant1Image').attr('src', data.businesses[0].image_url);
+
+        console.log(data.businesses[1].name);
+        console.log(data.businesses[1].price);
+        console.log(data.businesses[1].rating);
+        console.log(data.businesses[0].image_url);
+        console.log(data.businesses[1].location.display_address[0]);
+        console.log(data.businesses[1].location.display_address[1]);
+
+        const restaurant2Name = data.businesses[1].name
+        $('#restaurant2Name').text(restaurant2Name);
+
+        const restaurant2Rating = data.businesses[1].rating
+        const restaurant2Price = data.businesses[1].price
+        $('#restaurant2Text').text(restaurant2Rating + ' , ' + restaurant2Price);
+
+        const restaurant2Image = data.businesses[1].image_url
+        $('#restaurant2Image').attr('src', data.businesses[1].image_url);
+
+        console.log(data.businesses[2].name);
+        console.log(data.businesses[2].price);
+        console.log(data.businesses[2].rating);
+        console.log(data.businesses[0].image_url);
+        console.log(data.businesses[2].location.display_address[0]);
+        console.log(data.businesses[2].location.display_address[1]);
+
+        const restaurant3Name = data.businesses[2].name
+        $('#restaurant3Name').text(restaurant3Name);
+
+        const restaurant3Rating = data.businesses[2].rating
+        const restaurant3Price = data.businesses[2].price
+        $('#restaurant3Text').text(restaurant3Rating + ' , ' + restaurant3Price);
+
+        const restaurant3Image = data.businesses[2].image_url
+        $('#restaurant3Image').attr('src', data.businesses[2].image_url);
+
     });
 
     console.log(searchTerm);
