@@ -103,7 +103,11 @@ locationSearchInput.addEventListener('keydown', function(event) {
         console.log(data.businesses[0].location.display_address[1]);
         
         const restaurant1Name = data.businesses[0].name
-        $('#restaurant1Name').text(restaurant1Name)
+        $('#restaurant1Name').text(restaurant1Name);
+
+        const restaurant1Rating = data.businesses[0].rating
+        const restaurant1Price = data.businesses[0].price
+        $('#restaurant1Text').text(restaurant1Rating + ' , ' + restaurant1Price);
 
         console.log(data.businesses[1].name);
         console.log(data.businesses[1].price);
@@ -112,12 +116,26 @@ locationSearchInput.addEventListener('keydown', function(event) {
         console.log(data.businesses[1].location.display_address[0]);
         console.log(data.businesses[1].location.display_address[1]);
 
+        const restaurant2Name = data.businesses[1].name
+        $('#restaurant2Name').text(restaurant2Name);
+
+        const restaurant2Rating = data.businesses[1].rating
+        const restaurant2Price = data.businesses[1].price
+        $('#restaurant2Text').text(restaurant2Rating + ' , ' + restaurant2Price);
+
         console.log(data.businesses[2].name);
         console.log(data.businesses[2].price);
         console.log(data.businesses[2].rating);
         console.log(data.businesses[0].image_url);
         console.log(data.businesses[2].location.display_address[0]);
         console.log(data.businesses[2].location.display_address[1]);
+
+        const restaurant3Name = data.businesses[2].name
+        $('#restaurant3Name').text(restaurant3Name);
+
+        const restaurant3Rating = data.businesses[2].rating
+        const restaurant3Price = data.businesses[2].price
+        $('#restaurant3Text').text(restaurant3Rating + ' , ' + restaurant3Price);
 
     });
 
